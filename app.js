@@ -17,7 +17,7 @@ app.use(cors({
 
 
 
-const sql = require('mssql')
+const sql = require('mssql')  
 const sqlConfig = {
   user: 'homelane',
   password: 'Ashok@0469',
@@ -37,15 +37,13 @@ const sqlConfig = {
 
 
 app.get('/api/budgetHomes', async (req, res) => {
-    console.log("reqi-->",req.query)
-    let query = queryBuilder.getBudgetHomes(req);
+    let query = queryBuilder.getBudgetHomes(req);  //Building Query
     await sql.connect(sqlConfig)
     const result = await sql.query(query)
     res.send(result)
 })
 
 app.get('/api/sqftHomes',async (req,res) => {
-    console.log("reqi-->",req.query)
     let query = queryBuilder.getsqftHomes(req);
     await sql.connect(sqlConfig)
     const result = await sql.query(query)
@@ -53,7 +51,6 @@ app.get('/api/sqftHomes',async (req,res) => {
 });
 
 app.get('/api/avgHomes',async (req,res) => {
-    console.log("reqi-->",req.query)
     let query = queryBuilder.getAgeHomes(req);
     await sql.connect(sqlConfig)
     const result = await sql.query(query)
