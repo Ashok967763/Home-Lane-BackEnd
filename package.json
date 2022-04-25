@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ashok967763/Home-Lane-BackEnd.git"

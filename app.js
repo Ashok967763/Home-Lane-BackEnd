@@ -36,6 +36,10 @@ const sqlConfig = {
 
 
 
+app.get('/api', async (req, res) => {
+    res.send("Working")
+})
+
 app.get('/api/budgetHomes', async (req, res) => {
     let query = queryBuilder.getBudgetHomes(req);  //Building Query
     await sql.connect(sqlConfig)
