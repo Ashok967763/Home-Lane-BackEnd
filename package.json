@@ -2,7 +2,7 @@
   "name": "homelane",
   "version": "1.0.0",
   "description": "",
-  "main": "homelane.js",
+  "main": "app.js",
   "scripts": {
   },
   "repository": {
