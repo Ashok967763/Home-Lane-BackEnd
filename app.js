@@ -19,7 +19,7 @@ app.use(cors({
 
 const sql = require('mssql')  
 const sqlConfig = {
-  user: 'homelane',
+  user: 'homelne',
   password: 'Ashok@0469',
   database: 'homelane',
   server: 'homelane.database.windows.net',
@@ -41,10 +41,16 @@ app.get('/api', async (req, res) => {
 })
 
 app.get('/api/budgetHomes', async (req, res) => {
-    let query = queryBuilder.getBudgetHomes(req);  //Building Query
-    await sql.connect(sqlConfig)
-    const result = await sql.query(query)
-    res.send(result)
+    try{
+        let query = queryBuilder.getBudgetHomes(req);  //Building Query
+        console.log("query--->",query);
+        await sql.connect(sqlConfig)
+        const result = await sql.query(query)
+        res.send(result)
+    }
+    catch(err) {
+        console.log("error-->",err)
+    }
 })
 
 app.get('/api/sqftHomes',async (req,res) => {
