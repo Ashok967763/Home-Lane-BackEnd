@@ -19,7 +19,7 @@ app.use(cors({
 
 const sql = require('mssql')  
 const sqlConfig = {
-  user: 'homelne',
+  user: 'homelane',
   password: 'Ashok@0469',
   database: 'homelane',
   server: 'homelane.database.windows.net',
