@@ -41,16 +41,10 @@ app.get('/api', async (req, res) => {
 })
 
 app.get('/api/budgetHomes', async (req, res) => {
-    try{
         let query = queryBuilder.getBudgetHomes(req);  //Building Query
-        console.log("query--->",query);
         await sql.connect(sqlConfig)
         const result = await sql.query(query)
         res.send(result)
-    }
-    catch(err) {
-        console.log("error-->",err)
-    }
 })
 
 app.get('/api/sqftHomes',async (req,res) => {
